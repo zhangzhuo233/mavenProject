@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+    <!--开启注解-->
+    <context:component-scan base-package="com.bd.springmvc.controller" use-default-filters="false">
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+
+<!--    &lt;!&ndash;配置映射机制&ndash;&gt;-->
+<!--    <bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>-->
+<!--    &lt;!&ndash;处理Controller&ndash;&gt;-->
+<!--    <bean name="/hello.action" class="com.bd.springmvc.controller.HelloController" />-->
+
+<!--    <bean id="hello" class="com.bd.springmvc.controller.HelloController"/>-->
+<!--    <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">-->
+<!--        <property name="urlMap">-->
+<!--            <map>-->
+<!--                <entry key="/hello" value-ref="hello"></entry>-->
+<!--            </map>-->
+<!--        </property>-->
+<!--    </bean>-->
+
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/page/" />
+        <property name="suffix" value=".jsp" />
+    </bean>
+</beans>
