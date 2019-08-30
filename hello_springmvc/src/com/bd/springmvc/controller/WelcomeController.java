@@ -3,6 +3,7 @@ package com.bd.springmvc.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * @program: hello_springmvc
@@ -13,8 +14,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class WelcomeController {
     @RequestMapping(value = "/welcome")
-    public String welcome() {
+    public String welcome(@RequestParam String name) {
         System.out.println("welcome jsp...");
+        System.out.println("Welcome:" + name);
         return "welcome";
     }
 }
